@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<home>
+    <head>
+        <title>View Visitor</title>
+        <link rel="stylesheet" href="{% static 'css2/tbcss.css' %}">
+    </head>
+    {% include "health_menu_bar.html" %}
+    <body>
+        <table>
+            <thead>
+              <tr>
+                  <tr>
+                      <th>Name</th>
+                      <th>Phone</th>
+                      <th>Email</th>
+                      <th>Date</th>
+                      <th>Time</th>
+                      <th></th>
+
+              </tr>
+            </thead>
+            <tbody>
+                {% for i in d %}
+                <tr>  
+                    <td>{{ i.vis_name }}</td>
+                    <td>{{ i.vis_phone }}</td>
+                    <td>{{ i.vis_email }}</td>
+                    <td>{{ i.vis_date }}</td>
+                    <td>{{ i.vis_time }}</td>
+                    <td><a href="/contactlist2/{{i.vis_id}}">Add To Contact List</a></td>
+                </tr>
+                {% endfor %}
+    
+              </tbody>
+          </table>
+      <script src="{% static 'js2/tbjs.js' %}"></script>
+    </body>
+    </home>
+</html>

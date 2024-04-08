@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<home>
+<head>
+    <link rel="stylesheet" href="{% static 'css2/tbcss.css' %}">
+</head>
+{% include "police_menu_bar2.html" %}
+<body>
+        <table>
+          <thead>
+            <tr>
+                <tr>
+                    <th>Id</th>
+                    <th>Authority</th>
+                    <th>Notification Data</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in d %}
+            <tr>  
+                <td>{{ i.not_id }}</td>
+                <td>{{ i.not_athority }}</td>
+                <td>{{ i.not_data }}</td>
+                <td>{{ i.not_date }}</td>
+                <td>{{ i.not_status }}</td>
+                <td><a href="/police_remove_notification2/{{i.not_id}}">Remove</a></td>
+            </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="{% static 'js2/tbjs.js' %}"></script>
+  </body>
+  </home>

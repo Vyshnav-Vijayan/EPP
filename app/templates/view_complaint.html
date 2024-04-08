@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<home>
+<head>
+    <link rel="stylesheet" href="{% static 'css2/tbcss.css' %}">
+</head>
+{% include "admin_menu_bar.html" %}
+<body>
+  <h1 style="align-items: center;">Complaints</h1>
+        <table>
+          <thead>
+            <tr>
+                <tr>
+                    <th>Complaint</th>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in d %}
+            <tr>  
+                
+                <td>{{ i.comp_data }}</td>
+                <td>{{ i.comp_date }}</td>
+                <td>{{ i.comp_name }}</td>
+                <td>{{ i.comp_address }}</td>
+                <td>{{ i.comp_phone }}</td>
+                
+            </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="{% static 'js2/tbjs.js' %}"></script>
+  </body>
+  </home>

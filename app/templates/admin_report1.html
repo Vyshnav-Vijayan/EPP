@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<home>
+<head>
+    <link rel="stylesheet" href="{% static 'css2/tbcss.css' %}">
+</head>
+{% include "admin_menu_bar.html" %}
+<body>
+    <h1>Organization</h1>
+        <table>
+          <thead>
+            <tr>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Location</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Category</th>
+                    <th>Contact Person Name</th>
+                    <th>License No</th>
+                    <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in d %}
+            <tr>  
+                <td>{{ i.org_id }}</td>
+                <td>{{ i.org_name }}</td>
+                <td>{{ i.org_city }}</td>
+                <td>{{ i.org_location }}</td>
+                <td>{{ i.org_phone }}</td>
+                <td>{{ i.org_email }}</td>
+                <td>{{ i.org_category }}</td>
+                <td>{{ i.org_contact_person_name }}</td>
+                <td>{{ i.org_license_no }}</td>
+                <td>{{ i.org_status }}</td>
+            </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="{% static 'js2/tbjs.js' %}"></script>
+  </body>
+  </home>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<home>
+<head>
+    <link rel="stylesheet" href="{% static 'css2/tbcss.css' %}">
+</head>
+{% include "admin_menu_bar.html" %}
+<body>
+        <table>
+          <thead>
+            <tr>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>District</th>
+                    <th>Place</th>
+                    <th>Category</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Remark</th>
+                    <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in d %}
+            <tr>  
+                <td>{{ i.acc_id }}</td>
+                <td>{{ i.acc_name }}</td>
+                <td>{{ i.acc_district }}</td>
+                <td>{{ i.acc_place }}</td>
+                <td>{{ i.acc_category }}</td>
+                <td>{{ i.acc_phone }}</td>
+                <td>{{ i.acc_email }}</td>
+                <td>{{ i.acc_remark }}</td>
+                <td><a href="/remove_account2/{{i.acc_id}}">Remove</a></td>
+            </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="{% static 'js2/tbjs.js' %}"></script>
+  </body>
+  </home>

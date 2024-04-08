@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<home>
+    <head>
+        <title>Search Visitor</title>
+        <style>
+            input[type=text], select {
+              width: 100%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+            }
+            input[type=date], select {
+              width: 100%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+            }
+            
+            input[type=submit] {
+              width: 100%;
+              background-color: #4CAF50;
+              color: white;
+              padding: 14px 20px;
+              margin: 8px 0;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+            }
+            
+            input[type=submit]:hover {
+              background-color: #45a049;
+            }
+            </style>
+        <link rel="stylesheet" href="{% static 'css2/tbcss.css' %}">
+    </head>
+    {% include "health_menu_bar.html" %}
+    <body>
+        <form action="/health_search_organization4/" method="post" >
+            {% csrf_token %}
+        <input type="text" class="email-bt" value="{{d.org_id}}" name="organization_id" readonly><br><br><br>
+        <input type="date" class="email-bt" placeholder="Date" name="visitor_date"><br><br><br>
+        <input type="submit" value="Search">
+        </form>
+        <script src="{% static 'js2/tbjs.js' %}"></script>
+    </body>
+    </home>
+</html>

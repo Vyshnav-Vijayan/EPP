@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<home>
+<head>
+    <link rel="stylesheet" href="{% static 'css2/tbcss.css' %}">
+</head>
+{% include "health_menu_bar.html" %}
+<body>
+        <table>
+          <thead>
+            <tr>
+                <tr>
+                    <th>Id</th>
+                    <th>City</th>
+                    <th>Venue</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Remark</th>
+                    <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in d %}
+            <tr>  
+                <td>{{ i.test_id }}</td>
+                <td>{{ i.test_city }}</td>
+                <td>{{ i.test_venue }}</td>
+                <td>{{ i.test_date }}</td>
+                <td>{{ i.test_time }}</td>
+                <td>{{ i.test_remark }}</td>
+                <td><a href="/health_update_test_campaign2/{{i.test_id}}">Update</a></td>
+            </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="{% static 'js2/tbjs.js' %}"></script>
+  </body>
+  </home>

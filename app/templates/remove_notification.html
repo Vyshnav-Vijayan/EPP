@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<home>
+<head>
+    <link rel="stylesheet" href="{% static 'css2/tbcss.css' %}">
+</head>
+{% include "admin_menu_bar.html" %}
+<body>
+        <table>
+          <thead>
+            <tr>
+                <tr>
+                    <th>Id</th>
+                    <th>Authority</th>
+                    <th>Notification Data</th>
+                    <th>Date</th>
+                    <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in d %}
+            <tr>  
+                <td>{{ i.not_id }}</td>
+                <td>{{ i.not_athority }}</td>
+                <td>{{ i.not_data }}</td>
+                <td>{{ i.not_date }}</td>
+                <td><a href="/remove_notification2/{{i.not_id}}">Remove</a></td>
+            </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="{% static 'js2/tbjs.js' %}"></script>
+  </body>
+  </home>
